@@ -1,8 +1,9 @@
 import React from "react";
+import "./Person.css";
 
 const person = (props) => {
   return (
-    <div>
+    <div className="Person">
       <p>
         Me chamo {props.nome} e tenho {props.idade} de idade
       </p>
