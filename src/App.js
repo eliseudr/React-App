@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Person from "./Person/Person";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    person: [
+      { nome: "Eliseu", idade: 22 },
+      { nome: "Giovanna", idade: 20 },
+      { nome: "Soon", idade: 23 },
+    ],
+  };
+
+  switchNameHandler = () => {
+    this.setState({
+      person: [
+        { nome: "Lucas", idade: 22 },
+        { nome: "Giovanna", idade: 20 },
+        { nome: "Soon", idade: 23 },
+      ],
+    });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <h1>Testando</h1>
+        <button onClick={this.switchNameHandler}>Trocar nome</button>
+        <Person
+          nome={this.state.person[0].nome}
+          idade={this.state.person[0].idade}
+        />
+        <Person
+          nome={this.state.person[1].nome}
+          idade={this.state.person[1].idade}
+        />
+        <Person
+          nome={this.state.person[2].nome}
+          idade={this.state.person[2].idade}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
