@@ -4,8 +4,8 @@ import "./Person.css";
 const person = (props) => {
   return (
     <div className="Person">
-      <p>
-        Me chamo {props.nome} e tenho {props.idade} de idade
+      <p onClick={props.click}>
+        Me chamo {props.nome} e tenho {props.idade} anos de idade
       </p>
       <p>{props.children}</p>
     </div>
